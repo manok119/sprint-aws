@@ -33,7 +33,7 @@ console.log('Hello World');
 app.get('/status', authToken, (req, res) => {
   if (req.username) { // jwt 토큰이 존재할 경우 데이터베이스 연결 여부 조회
     db.query('use test', (err) => {
-      if (err) {
+      if (err) {console.log(err)
         return res.status(200).send({
           isLogin: true,
           isConnectedToDatabase: false
